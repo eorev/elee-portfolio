@@ -28,15 +28,15 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="w-64 h-64 relative rounded-full overflow-hidden">
+            <div className="w-64 h-64 relative rounded-full overflow-hidden shadow-xl">
               <Image
                 src="/headshot.jpeg"
                 alt="Edwin Lee"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_35%]"
                 priority
               />
             </div>
@@ -45,8 +45,7 @@ export default function Home() {
                 Welcome, I&apos;m Edwin Lee
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 transition-colors duration-200">
-                {/* Add your professional bio here */}
-                A passionate professional dedicated to excellence in business and communication.
+                I am currently a senior double majoring in Finance and Entrepreneurship. With a strong passion to pursue a financial career, I have utilized multiple internship opportunities to further my knowledge in the field. On campus, I am a member of Alpha Kappa Psi Professional Business Fraternity; surrounded by leaders and like-minded individuals I learn skills to be a true professional in the business world. The writings found in this portfolio are a collection of my personal favorites from my english course.
               </p>
             </div>
           </div>

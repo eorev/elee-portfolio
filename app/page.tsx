@@ -1,101 +1,102 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import ThemeToggle from './components/theme-toggle'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex space-x-8 items-center">
+              <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white transition-colors duration-200">
+                Edwin Lee
+              </Link>
+              <Link href="/resume" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                Resume
+              </Link>
+              <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200">
+                Contact
+              </Link>
+            </div>
+            <div className="flex items-center">
+              <ThemeToggle />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="w-64 h-64 relative rounded-full overflow-hidden">
+              <Image
+                src="/headshot.jpeg"
+                alt="Edwin Lee"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-200">
+                Welcome, I&apos;m Edwin Lee
+              </h1>
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-6 transition-colors duration-200">
+                {/* Add your professional bio here */}
+                A passionate professional dedicated to excellence in business and communication.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Works Section */}
+      <section className="py-12 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 transition-colors duration-200">Featured Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <WorkCard
+              title="Mission Statement Analysis"
+              description="Analysis and creation of a mission statement for a breakfast/brunch restaurant, demonstrating strategic thinking and brand understanding."
+              link="/works/mission-statement"
+            />
+            <WorkCard
+              title="Brand Logo Analysis"
+              description="In-depth analysis of October's Very Own brand logo, showcasing analytical skills and attention to detail."
+              link="/works/brand-analysis"
+            />
+            <WorkCard
+              title="Crisis Communication"
+              description="Executive response to a social media incident, highlighting leadership and professional communication skills."
+              link="/works/crisis-communication"
+            />
+            <WorkCard
+              title="Policy Change Communication"
+              description="Professional communication of hybrid work policy changes, demonstrating empathy and clear communication."
+              link="/works/policy-change"
+            />
+            <WorkCard
+              title="Economic Analysis"
+              description="Comprehensive analysis of Trinidad and Tobago's economy, showcasing research and analytical capabilities."
+              link="/works/economic-analysis"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
+
+function WorkCard({ title, description, link }: { title: string; description: string; link: string }) {
+  return (
+    <Link href={link}>
+      <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-200">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-300 transition-colors duration-200">{description}</p>
+      </div>
+    </Link>
+  )
 }
